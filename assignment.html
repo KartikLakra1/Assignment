@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1</title>
+</head>
+<body>
+
+    <div id="root1"></div>
+    <div id="root2"></div>
+    <div id="root3"></div>
+    <div id="root4"></div>
+
+
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
+
+        // // Q1 : Create a component named "Person" that takes two props - "name" and "age". The component should
+        //         display the persons name and age in a paragraph elements
+        const person = () => React.createElement("p" , {id : "para"}, 
+        React.createElement("div" , {id : "name" }, "Name : kartik"),
+        React.createElement("div" ,{id : "age"} , "Age : 20"));
+
+        const rootElement1 = document.getElementById("root1");
+        const root1 = ReactDOM.createRoot(rootElement1);
+
+
+        root1.render(person());
+
+
+        // // Q2 : Create a component named "Button" that takes two props - "text" and "onClick". The component should
+        //         display a button element with the given text and call the onClick function when clickeds
+        const btn = () => React.createElement("button" , {id : "btn"} , 
+        React.createElement("span" , {id : "text"} , "Click me !"));
+
+        const rootElement2 = document.getElementById("root2");
+        const root2 = ReactDOM.createRoot(rootElement2);
+
+
+        root2.render(btn());
+
+        // // Q3 : Create a component named "Header" that takes one prop - "title". The component should display a header
+        //         element with the given titles
+        const header = () => React.createElement("header" , {id : "head"} , 
+        React.createElement("span" , {id : "text"} , "  INSIDE HEADER TAG"));
+
+        const rootElement3 = document.getElementById("root3");
+        const root3 = ReactDOM.createRoot(rootElement3);
+
+
+        root3.render(header());
+
+
+        // // Q4 : Create a component named "List" that takes one prop - "items". The component should display an
+        //         unordered list element with the given list items.
+        const list = () => React.createElement("ul" , {id : "list"} , 
+        React.createElement("li" , {} , "one"),
+        React.createElement("li" , {} , "two"),
+        React.createElement("li" , {} , "three"),
+        React.createElement("li" , {} , "four"),
+        React.createElement("li" , {} , "five"));
+        const rootElement4 = document.getElementById("root4");
+        const root4 = ReactDOM.createRoot(rootElement4);
+        root4.render(list());
+
+    </script>
+    
+</body>
+</html>
